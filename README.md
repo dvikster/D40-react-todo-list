@@ -1,2 +1,2 @@
-# D40-react-todo-list
-D40-react-todo-list
+# D40-react-axios
+D40-react-axios
