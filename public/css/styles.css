@@ -43,7 +43,7 @@ nav .brand-logo {
 
 .item
 {
-    display: inline-block;
+    display: block;
     vertical-align: top;
     margin:30px;
     padding:0;
@@ -54,27 +54,16 @@ nav .brand-logo {
 .item div{
     margin-bottom: 10px;
 }
-.item .img-container {
-    width: auto;
-}
-.item img {
-    border: 0;
-    display: block;
-    margin: 0 auto;
-}
-.item .img-container{
-    width: 100px;
-}
+
 .btn{
-    background-color: #40c592;
-    width: 100%;
     font-size: 23px;
     height: 50px;
     font-family: 'Voltaire', sans-serif;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    margin: 10px 0 0 0;
+    margin: 0 0 0 50px;
+    width: auto;
 }
 .btn:hover{
     background-color: #39b183;

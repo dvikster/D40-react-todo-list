@@ -6,7 +6,7 @@ import MainContainer from './components/MainContainer';
 
 //Pages
 import Home from './components/Home'
-import Todos from './components/Todos'
+import CreatTodoInput from './components/CreateTodoInput'
 
 
 
@@ -16,7 +16,7 @@ export default (
             <Route path="/" component={Home} />
 
             <Route path="todo-list">
-                    <IndexRoute component={Todos}/>
+                    <IndexRoute component={CreatTodoInput}/>
             </Route>
         </Route>
   </Router>

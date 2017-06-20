@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {Button} from 'react-materialize';
 
+
 export default class TodosItem extends Component{
+
     state ={
         visible: false
     };
-
 
     clickCloseButton = (e)=> {
         e.preventDefault();
@@ -14,12 +15,14 @@ export default class TodosItem extends Component{
 
     render(){
         let todo = this.props.todosList;
-
         let visible = this.state.visible;
+
             return (
-                <div className={"item "+(visible ? 'none': '')} key={todo.id}>
-                     <div>{todo.user}</div>
-                    <Button onClick={this.clickCloseButton} waves='light'>Delete</Button>
+                <div className={"item "+(visible ? 'none': '')}>
+                     <div>
+                         {todo}
+                        <Button onClick={this.clickCloseButton} waves='light'>Delete</Button>
+                     </div>
                 </div>
             )
     }

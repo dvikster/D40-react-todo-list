@@ -1,25 +1,27 @@
-import React, {Component, PropTypes}  from 'react';
+import React, {Component}  from 'react';
+import PropTypes from 'prop-types';
+import Todos from './Todos'
 
+
+let todoList = [];
 
 export default class CreatTodoInput extends Component{
     static propTypes = {
-        onSave: PropTypes.func.isRequired,
         text: PropTypes.string,
-        placeholder: PropTypes.string,
-        newTodo: PropTypes.bool
     }
-
-    state = {
-        text: this.props.text || ''
-    }
+    constructor(props){
+        super(props);
+        this.state = ({
+            text: this.props.text || '',
+            list: []
+        });
+    };
 
     todoSubmit = e => {
-        const text = e.target.value.trim()
         if (e.which === 13) {
-            this.props.onSave(text)
-            if (this.props.newTodo) {
-                this.setState({ text: '' })
-            }
+            this.setState({ text: e.target.value })
+            todoList.push(e.target.value);
+            this.setState({text:''});
         }
     }
 
@@ -29,13 +31,16 @@ export default class CreatTodoInput extends Component{
 
     render() {
         return (
-            <input
-                   type="text"
-                   placeholder={this.props.placeholder}
-                   autoFocus="true"
-                   value={this.state.text}
-                   onChange={this.taskCheckboxChange}
-                   onKeyDown={this.todoSubmit} />
+            <div>
+                <h1>Todo-List</h1>
+                <input
+                       type="text"
+                       value={this.state.text}
+                       onChange={this.taskCheckboxChange}
+                       onKeyDown={this.todoSubmit}
+                />
+                <Todos data={todoList} />
+            </div>
         )
     }
 }
